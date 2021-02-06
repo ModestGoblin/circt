@@ -259,6 +259,7 @@ void FIRRTLTypesLowering::visitDecl(InstanceOp op) {
 void FIRRTLTypesLowering::visitDecl(MemOp op) {
   auto type = op.getDataType();
 
+  // TODO: Remove this flattening and emit structs directly.
   SmallVector<FlatBundleFieldEntry, 8> fieldTypes;
   flattenBundleTypes(type, "", false, fieldTypes);
 
